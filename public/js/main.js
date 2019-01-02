@@ -4,15 +4,15 @@ var nav = $(".navs_mo_sub");
 var navWid = nav.width();
 $(window).resize(function(){
 	navWid = nav.width();
-	if($(window).width() > 768) navInit();
-	else navMove();
+	if($(window).width() > 768) navHide();
+	else navToggle();
 }).trigger("resize");
-bar.click(navMove);
-bar2.click(navMove);
-function navInit() {
+bar.click(navToggle);
+bar2.click(navToggle);
+function navHide() {
 	nav.css({"left":-navWid+"px"});
 }
-function navMove() {
+function navToggle() {
 	if(nav.position().left == 0) nav.stop().animate({"left": -navWid+"px"}, 500);
 	else nav.stop().animate({"left": 0}, 500);
 }
