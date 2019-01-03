@@ -1,5 +1,16 @@
 @import 'base.css';
 
+/***** 공통사항 *****/
+@keyframes sizeUp {
+	0% {transform:scale(1);}
+	100% {transform:scale(1.2);}
+}
+@keyframes sizeDn {
+	0% {transform:scale(1.2);}
+	100% {transform:scale(1);}
+}
+
+/***** Header *****/
 header {width:100%; position:fixed; box-shadow:0 3px 4px rgba(0,0,0,0.3); font-size:1rem; background-color: white; z-index:999; top:0;}
 .logo {float:left; padding:1em;}
 .nav {cursor:pointer;}
@@ -41,7 +52,6 @@ header {width:100%; position:fixed; box-shadow:0 3px 4px rgba(0,0,0,0.3); font-s
 @media screen and (max-width:768px) {
 	.banner_slogan {font-size:0.75rem;}
 }
-
 @media screen and (max-width:480px) {
 	.banner_slogan {font-size:0.5rem;}
 }
@@ -63,3 +73,24 @@ header {width:100%; position:fixed; box-shadow:0 3px 4px rgba(0,0,0,0.3); font-s
 @media screen and (max-width:480px) {
 	.company_features > li {width:100%;}
 }
+
+/***** Design PC *****/
+.design {padding:5rem 0; font-size:1rem; background-color:#eee;}
+.design > :first-child {float:left; width:50%; padding:5%;}
+.design h2 {font-weight:200; letter-spacing: 3px; margin-bottom:1.5em;}
+.design h5 {line-height:2em; margin-bottom:1.5em;}
+.design > :last-child {float:left; width:40%; margin:5%; overflow:hidden; border-radius:0.5em;}
+.design img {animation-name:sizeDn; animation-duration:1s; animation-fill-mode:forwards;}
+.design img:hover {animation-name:sizeUp;}
+/***** Design Response *****/
+@media screen and (max-width:480px) {
+	.design > :first-child {width:100%;}
+	.design > :last-child {width:90%;}
+}
+
+/***** Team PC *****/
+.team {padding:5rem 0; text-align:center;}
+.team h2 {font-weight:200; letter-spacing: 3px; margin-bottom:1.5em;}
+.team h5 {line-height:2em; margin-bottom:1.5em;}
+.team > ul {max-width:1400px; margin:auto;}
+.member {width:24%; margin:.5%; float:left; box-shadow:0 0 5px rgba(0,0,0,.3);}
