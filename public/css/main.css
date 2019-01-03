@@ -20,14 +20,19 @@ header {width:100%; position:fixed; box-shadow:0 3px 4px rgba(0,0,0,0.3); font-s
 	.navs_mo_sub {display:block;}
 }
 
-.banner {padding-top:3rem;}
-.banner > ul > li {position:relative;}
+.banner {position:relative; top:3rem;}
+.banner_wrap {position:absolute; width:100%;} /*배너무빙의 기준*/
+.banner_wrap > li {position:absolute;}
 .banner_slogan {position:absolute; width:90%; left:5%; top:50%; color:#fff; transform:translateY(-50%); font-size:1rem;}
 .banner_slogan > h1 {font-size:4em; margin-bottom:0.75em;}	
 .banner_slogan > h4 {font-size:1.5em; margin-bottom:1em;}	
 .banner_slogan > button {font-size:1em; padding:1em; 
 	background-color:rgba(248, 248, 219, .7); color:#121212; border:none;}	
 .banner_slogan > button:hover {background-color:rgba(248, 248, 219, 1);}
+
+.social_link {position:absolute; width:100%; bottom:3%; left:5%; text-align:left; z-index:10;}
+.social_link > li {display:inline-block; color:#ccc; cursor:pointer;}
+.social_link > li:hover {color:#f1f1f1;}
 
 @media screen and (max-width:768px) {
 	.banner_slogan {font-size:0.75rem;}
