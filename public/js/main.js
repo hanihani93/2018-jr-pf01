@@ -13,7 +13,6 @@ $(window).resize(function(){
 /***** 메인 배너 ******/
 function banInit() {
 	$(".banner_wrap").height($(".banner_wrap > li").height());
-	$(".banner").height($(".banner_wrap > li").height());
 }
 
 /***** 모바일 네비게이션 ******/
