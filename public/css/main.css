@@ -152,3 +152,17 @@ header {width:100%; position:fixed; box-shadow:0 3px 4px rgba(0,0,0,0.3); font-s
 	.work_float .work {width:96%; margin:2%;}
 	.grid-sizer, .grid-item { width:96%; margin:2%;}
 }
+
+/***** Skills PC *****/
+.skills {background-color:#eee; padding:5rem 0;}
+.skills > ul {width:94%; margin:auto; max-width:1200px;}
+.skills > ul > li {width:50%; float:left;}
+
+.skill_lt {padding-right:3%;}
+.skill_lt > h2 {font-weight:200; letter-spacing: 3px; margin-bottom:1.5em;}
+.skill_lt > p {line-height:2em; margin-top:2em;}
+
+/***** Skills Response *****/
+@media screen and (max-width:480px) {
+	.skills > ul > li {width:100%; margin-bottom:3%;}
+}
