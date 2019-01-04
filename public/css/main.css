@@ -1,6 +1,16 @@
 @import 'base.css';
 
 /***** 공통사항 *****/
+@media screen and (max-width:768px) {
+	html, body {font-size:14px;}
+}
+@media screen and (max-width:480px) {
+	html, body {font-size:12px;}
+}
+@media screen and (max-width:320px) {
+	
+}
+
 @keyframes sizeUp {
 	0% {transform:scale(1);}
 	100% {transform:scale(1.2);}
@@ -206,3 +216,10 @@ header {width:100%; position:fixed; box-shadow:0 3px 4px rgba(0,0,0,0.3); font-s
 @media screen and (max-width:768px) {
 	.contacts > ul > li {width:96%; margin:auto;}
 }
+
+/***** footer PC *****/
+footer {padding:5rem 0; background-color:#222; text-align: center; color:#eee;}
+.footer_social_link {font-size:1.5em; padding:1em;}
+.footer_social_link > li {display:inline-block; cursor:pointer;}
+.footer_social_link > li:hover {color:#fff;}
+/***** footer response *****/

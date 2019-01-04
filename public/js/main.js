@@ -73,3 +73,8 @@ $(window).resize(function(){
 	clusterer.addMarker(marker);
 }).trigger("resize");
 
+/***** bt_top *****/
+$("#bt_top").click(function(){
+	$("html, body").stop().animate({"scrollTop":0}, 2000);
+});
+
