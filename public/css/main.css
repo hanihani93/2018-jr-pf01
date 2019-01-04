@@ -136,7 +136,7 @@ header {width:100%; position:fixed; box-shadow:0 3px 4px rgba(0,0,0,0.3); font-s
 .work_flex > ul > li {width:23%; margin-bottom:1%;}
 /* Masonry 용 */
 .work_masonry {max-width:1200px; margin:auto; width:100%;}
-.grid-sizer, .grid-item { width:24%; margin:.5%; overflow: hidden;}
+.grid-sizer, .grid-item { width:24%; margin:.5%; overflow: hidden; float: left;}
 .grid-item > img {animation-name:sizeDn; animation-duration:.5s; animation-fill-mode:forwards;}
 .grid-item > img:hover {animation-name:sizeUp;}
 /* 2 columns */
@@ -188,4 +188,21 @@ header {width:100%; position:fixed; box-shadow:0 3px 4px rgba(0,0,0,0.3); font-s
 @media screen and (max-width:768px) {
 	.price {width:96%; margin:2%;}
 	.price:nth-child(2) {margin:2%; transform:translateY(0);}
+}
+
+/***** Contact PC *****/
+.contacts {padding:5rem 0; background-color:#f1f1f1;}
+.contacts > h2 {font-weight:200; letter-spacing: 3px; margin-bottom:1.5em; text-align:center;}
+.contacts > h5 {line-height:2em; margin-bottom:3em; text-align:center;}
+.contacts > ul {width:96%; max-width:1200px; margin:auto;}
+.contacts > ul > li {width:50%; float:left;}
+.contact_info > ul > li {padding:0.75em;}
+.contact_info span {font-size:2em; width:2em;}
+.contact_form input {width:100%; margin:0.75em 0; padding:0.5em;}
+.map {width:96%; margin:auto; max-width:1200px; height:40vh; margin-top:3rem; position: relative;}
+.map_marker {position: absolute; top:50%; left:50%; transform: translate(-50%, -50%); color:#f30; font-size:2rem; z-index:9999;}
+
+/***** Contact response *****/
+@media screen and (max-width:768px) {
+	.contacts > ul > li {width:96%; margin:auto;}
 }
