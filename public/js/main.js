@@ -23,7 +23,6 @@ bar2.click(navToggle);
 function navInit() {
 	navWid = nav.width();
 	if($(window).width() > 768) navHide();
-	else navToggle();
 }
 function navHide() {
 	nav.css({"left":-navWid+"px"});
