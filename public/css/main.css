@@ -179,9 +179,13 @@ header {width:100%; position:fixed; box-shadow:0 3px 4px rgba(0,0,0,0.3); font-s
 .prices > ul {max-width:1200px; margin:auto;}
 .price {width:32%; float:left; box-shadow:0 0 0.5em rgba(0,0,0,0.3);}
 .price:hover {box-shadow:0 0 1em rgba(0,0,0,0.6);}
-.price:nth-child(2) {margin:0 2%; transform:translateY(-1.5rem);}
+.price:nth-child(2) {margin:0 2%; transform:translateY(-2rem);}
 .price > ul > li {padding:1.25em; border-bottom:1px solid #ccc; background-color:#f1f1f1;}
 .price_tit {font-size:1.25em; padding:2rem !important; border-bottom:none !important; background-color:#111 !important; color:#f1f1f1;}
 .price_tit2 {font-size:1.25em; padding:4rem !important; background-color:#f30 !important; border-bottom:none !important; color:#f1f1f1;}
 
 /***** Price Response *****/
+@media screen and (max-width:768px) {
+	.price {width:96%; margin:2%;}
+	.price:nth-child(2) {margin:2%; transform:translateY(0);}
+}
