@@ -136,7 +136,9 @@ header {width:100%; position:fixed; box-shadow:0 3px 4px rgba(0,0,0,0.3); font-s
 .work_flex > ul > li {width:23%; margin-bottom:1%;}
 /* Masonry 용 */
 .work_masonry {max-width:1200px; margin:auto; width:100%;}
-.grid-sizer, .grid-item { width:24%; margin:.5%;}
+.grid-sizer, .grid-item { width:24%; margin:.5%; overflow: hidden;}
+.grid-item > img {animation-name:sizeDn; animation-duration:.5s; animation-fill-mode:forwards;}
+.grid-item > img:hover {animation-name:sizeUp;}
 /* 2 columns */
 /* .grid-item--width2 { width: 40%; } */
 /***** works Response *****/
@@ -154,15 +156,32 @@ header {width:100%; position:fixed; box-shadow:0 3px 4px rgba(0,0,0,0.3); font-s
 }
 
 /***** Skills PC *****/
-.skills {background-color:#eee; padding:5rem 0;}
+.skills {background-color:#eee; padding:5rem 0; font-size:1rem;}
 .skills > ul {width:94%; margin:auto; max-width:1200px;}
 .skills > ul > li {width:50%; float:left;}
 
 .skill_lt {padding-right:3%;}
 .skill_lt > h2 {font-weight:200; letter-spacing: 3px; margin-bottom:1.5em;}
 .skill_lt > p {line-height:2em; margin-top:2em;}
+.skill_rt .skill_tit {padding:2em 0 1em 0; letter-spacing:0.25em;}
+.skill_rt .skill_bar {background-color:#aaa;}
+.skill_rt .skill_bar > div {background-color:#555; color:#f1f1f1; text-align:center; padding:0.5em;}
 
 /***** Skills Response *****/
-@media screen and (max-width:480px) {
+@media screen and (max-width:768px) {
 	.skills > ul > li {width:100%; margin-bottom:3%;}
 }
+
+/***** Price PC *****/
+.prices {padding:5rem 0; background-color:#666; text-align:center;}
+.prices h2 {font-weight:200; letter-spacing: 3px; margin-bottom:1.5em; color:#f1f1f1;}
+.prices h5 {line-height:2em; margin-bottom:4em; color:#f1f1f1;}
+.prices > ul {max-width:1200px; margin:auto;}
+.price {width:32%; float:left; box-shadow:0 0 0.5em rgba(0,0,0,0.3);}
+.price:hover {box-shadow:0 0 1em rgba(0,0,0,0.6);}
+.price:nth-child(2) {margin:0 2%; transform:translateY(-1.5rem);}
+.price > ul > li {padding:1.25em; border-bottom:1px solid #ccc; background-color:#f1f1f1;}
+.price_tit {font-size:1.25em; padding:2rem !important; border-bottom:none !important; background-color:#111 !important; color:#f1f1f1;}
+.price_tit2 {font-size:1.25em; padding:4rem !important; background-color:#f30 !important; border-bottom:none !important; color:#f1f1f1;}
+
+/***** Price Response *****/
