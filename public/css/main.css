@@ -134,13 +134,21 @@ header {width:100%; position:fixed; box-shadow:0 3px 4px rgba(0,0,0,0.3); font-s
 .work_flex {max-width:1200px; margin:auto; width:100%;}
 .work_flex > ul {display:flex; -ms-display:flex; flex-direction:row; -ms-flex-direction:row; flex-wrap:wrap; -ms-flex-wrap:wrap; justify-content:space-between; -ms-justify-content:space-between;} 
 .work_flex > ul > li {width:23%; margin-bottom:1%;}
+/* Masonry 용 */
+.work_masonry {max-width:1200px; margin:auto; width:100%;}
+.grid-sizer, .grid-item { width:24%; margin:.5%;}
+/* 2 columns */
+/* .grid-item--width2 { width: 40%; } */
 /***** works Response *****/
 @media screen and (max-width:992px) {
 	.work_float .work {width:32%; margin:0.65%;}
+	.grid-sizer, .grid-item { width:32%; margin:0.65%;}
 }
 @media screen and (max-width:768px) {
 	.work_float .work {width:48%; margin:1%;}
+	.grid-sizer, .grid-item { width:48%; margin:1%;}
 }
 @media screen and (max-width:480px) {
 	.work_float .work {width:96%; margin:2%;}
+	.grid-sizer, .grid-item { width:96%; margin:2%;}
 }
