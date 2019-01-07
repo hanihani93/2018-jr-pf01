@@ -1,10 +1,10 @@
 /***** 공통사항 변수 선언 ******/
-const mapKey = "5abaa56b69e398c9c88c330eafc4f757"; 
+const log = console.log;
 
-var bar = $(".navs_mo");
-var bar2 = $(".nav_close");
-var nav = $(".navs_mo_sub");
-var navWid = nav.width();
+var $bar = $(".navs_mo");
+var $bar2 = $(".nav_close");
+var $nav = $(".navs_mo_sub");
+var navWid = $nav.width();
 
 /***** 반응형/높이를 위한 resize ******/
 $(window).resize(function(){
@@ -18,27 +18,28 @@ function banInit() {
 }
 
 /***** 모바일 네비게이션 ******/
-bar.click(navToggle);
-bar2.click(navToggle);
+$bar.click(navToggle);
+$bar2.click(navToggle);
 function navInit() {
-	navWid = nav.width();
+	navWid = $nav.width();
 	if($(window).width() > 768) navHide();
 }
 function navHide() {
-	nav.css({"left":-navWid+"px"});
+	$nav.css({"left":-navWid+"px"});
 }
 function navToggle() {
-	if(nav.position().left == 0) nav.stop().animate({"left": -navWid+"px"}, 500);
-	else nav.stop().animate({"left": 0}, 500);
+	if($nav.position().left == 0) $nav.stop().animate({"left": -navWid+"px"}, 500);
+	else $nav.stop().animate({"left": 0}, 500);
 }
 
 /***** Masonry *****/
+var masonryOption = {
+	itemSelector: '.grid-item',
+	columnWidth: '.grid-sizer',
+	percentPosition: true
+};
 $('.grid').imagesLoaded( function() {
-  $('.grid').masonry({
-		itemSelector: '.grid-item',
-		columnWidth: '.grid-sizer',
-		percentPosition: true
-	});
+  $('.grid').masonry(masonryOption);
 });
 
 /***** 다음 지도 *****/
