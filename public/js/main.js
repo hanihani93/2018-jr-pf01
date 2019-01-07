@@ -78,3 +78,11 @@ $("#bt_top").click(function(){
 	$("html, body").stop().animate({"scrollTop":0}, 2000);
 });
 
+var options = {
+	speed: 1000,
+	gap: 3000,
+	direction: "F",
+	type: "horizental",
+	pager: true
+};
+var mainBanner = new Slide($(".banner"), $(".banner_wrap"), $(".slide"), options);
