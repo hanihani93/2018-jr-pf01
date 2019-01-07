@@ -35,24 +35,55 @@ console.log(hello.greeting());
 	- 1번의 객체를 2번의 옵션으로 실제 실행
 */
 var Slide = (function(){
-	var obj = this;
 	function Slide(parent, container, slide, options) {
-		obj.parent = parent;
-		obj.container = container;
-		obj.slide = slide;
-		obj.options = options;
-		this.init();
+		var obj = this;
+		this.parent = parent;
+		this.container = container;
+		this.slide = slide;
+		this.options = options;
+		this.init(obj);
 	}
-	Slide.prototype.init = function(){
+	Slide.prototype.init = function(obj){
 		if(obj.options.type == "horizental") {
 			obj.slide.each(function(i){
-				console.log($(this));
+				$(this).css({"left":(i*100)+"%"});
 			});
+			obj.horiMove(obj);
 		}
 		else if(obj.options.type == "vertical") {
-
+			obj.slide.each(function(i){
+				$(this).css({"top":(i*100)+"%"});
+			});
+			obj.vertMove(obj);
+		}
+		else if(obj.options.type == "fade") {
+			obj.fadeMove(obj);
 		}
 	};
+	Slide.prototype.horiMove = function(obj){
+		
+	}
+	Slide.prototype.vertMove = function(obj){
+		
+	}
+	Slide.prototype.fadeMove = function(obj){
+		var depth = 0;
+		var now = 0;
+		var end = obj.slide.length - 1; 
+		obj.slide.each(function(){
+			if(depth < $(this).css("z-index")) depth = $(this).css("z-index");
+		});
+		depth++;
+		ani();
+		function ani() {
+			obj.slide.eq(now).css({"z-index":depth++, "opacity":0});
+			obj.slide.eq(now).delay(obj.options.gap).animate({"opacity":1}, obj.options.speed, function(){
+				if(now == end) now = 0;
+				else now++;
+				ani();
+			});
+		}
+	}
 	return Slide;
 }());
 

@@ -82,7 +82,8 @@ var options = {
 	speed: 1000,
 	gap: 3000,
 	direction: "F",
-	type: "horizental",
+	type: "fade",
 	pager: true
 };
 var mainBanner = new Slide($(".banner"), $(".banner_wrap"), $(".slide"), options);
+log(mainBanner.parent);
