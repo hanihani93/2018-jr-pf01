@@ -1,4 +1,4 @@
-var depth = 0;
+/* var depth = 0;
 var now = 0;
 var end = $(".slide").length - 1;
 $(".slide").each(function(){
@@ -13,4 +13,16 @@ function ani() {
 		else now++;
 		ani();
 	});
-}
+} */
+
+var FadeSlide = (function(){
+	function FadeSlide() {
+		
+	}
+	FadeSlide.prototype.init = function() {
+		
+	}
+	return FadeSlide;
+}());
+
+var mainBanner = new FadeSlide();

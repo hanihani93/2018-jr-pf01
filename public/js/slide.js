@@ -14,9 +14,25 @@ var Hello = (function(){
 
 var hello = new Hello("booldook");
 console.log(hello.greeting());
-*/
 
-/*
+
+
+// 객체의 최소 구조 - 선언
+var FadeSlide = (function(){
+	function FadeSlide() {
+		
+	}
+	FadeSlide.prototype.init = function() {
+		
+	}
+	return FadeSlide;
+}());
+// 객체의 인스턴스(복제품)를 생성 - 실행
+var obj = new FadeSlide();
+obj.init();
+
+
+
 슬라이드를 만들기 위한 준비
 1. 필요한 요소들(HTML 객체) : 
 	- parent (부모 - 슬라이드 들을 감싸는 객체)
