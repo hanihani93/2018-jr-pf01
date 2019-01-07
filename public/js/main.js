@@ -106,4 +106,4 @@ $(".banner_wrap").eq(0).find(".slide")
 $(".slide", $(".banner_wrap").eq(0))
 */
 
-var mainBanner = new FadeSlide($(".slide"), {delay:3000, speed:1000});
+new FadeSlide($(".slide"), {delay:3000, speed:1000});
