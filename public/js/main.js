@@ -79,11 +79,9 @@ $("#bt_top").click(function(){
 });
 
 var options = {
-	speed: 1000,
+	speed: 3000,
 	gap: 3000,
-	direction: "F",
 	type: "fade",
 	pager: true
 };
 var mainBanner = new Slide($(".banner"), $(".banner_wrap"), $(".slide"), options);
-log(mainBanner.parent);
