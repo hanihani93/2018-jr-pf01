@@ -31,6 +31,37 @@ var FadeSlide = (function(){
 var obj = new FadeSlide();
 obj.init();
 
+/*
+// 객체를 만드는 순서
+1. var Slide = (function(){}());
+2. var Slide = (function(){
+
+}());
+3. var Slide = (function(){
+	function Slide() {
+
+	}
+	return Slide;
+}());
+4. var Slide = (function(){
+	function Slide() {
+
+	}
+	Slide.prototype.start = function(){
+
+	}
+	return Slide;
+}());
+5. var Slide = (function(){
+	function Slide() {
+		var obj = this;
+		this.start(obj);
+	}
+	Slide.prototype.start = function(obj){
+		console.log(obj);
+	}
+	return Slide;
+}());
 
 
 슬라이드를 만들기 위한 준비
