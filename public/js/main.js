@@ -107,7 +107,7 @@ $(".slide", $(".banner_wrap").eq(0))
 */
 
 //new SlideFade($(".slide"), {delay:3000, speed:1000});
-/*
+
 var options = {
 	delay: 3000,
 	speed: 300,
@@ -116,7 +116,7 @@ var options = {
 	dirBtn:[$("#bt_prev"), $("#bt_next")]
 };
 var horiBanner = new SlideHori($("#banner1"), $("#banner1").find(".slide"), options);
-*/
+
 /*
 $(".banner_wrap").find(".slide")
 $(".banner_wrap").children(".slide")
