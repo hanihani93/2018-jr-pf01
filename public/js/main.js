@@ -122,3 +122,22 @@ $(".banner_wrap").find(".slide")
 $(".banner_wrap").children(".slide")
 $(".slide", $(".banner_wrap"))
 */
+
+/***** EmailJs *****/
+/*
+//선택자
+document.getElementById('contact-form') //ES5
+document.querySelector('#contact-form') //ES6
+$("#contact-form") //jquery
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+		event.preventDefault();
+		this.contact_number.value = Math.random() * 100000 | 0;
+		emailjs.sendForm('contact_service', 'contact_template', this);
+});
+*/
+emailjs.init("booldook");
+$('#contact-form').on('submit', function(e) {
+		e.preventDefault();
+		$("input:name['contact_number']").val(Math.random() * 100000 | 0);
+		emailjs.sendForm('contact_service', 'contact_template', this);
+});

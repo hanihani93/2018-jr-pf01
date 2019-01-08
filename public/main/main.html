@@ -307,14 +307,14 @@
 			<div class="work_masonry">
 				<ul class="grid">
 					<li class="grid-sizer"></li>
-					<li class="work grid-item spa_ani" data-delay="0.5s"><img src="../img/tech_camera.jpg" class="img"></li>
-					<li class="work grid-item spa_ani" data-delay="0.2s"><img src="../img/tech_drone.jpg" class="img"></li>
-					<li class="work grid-item spa_ani" data-delay="0.4s"><img src="../img/tech_mic.jpg" class="img"></li>
-					<li class="work grid-item spa_ani" data-delay="0.9s"><img src="../img/tech_phone.jpg" class="img"></li>
-					<li class="work grid-item spa_ani" data-delay="0.1s"><img src="../img/tech_sound.jpg" class="img"></li>
-					<li class="work grid-item spa_ani grid-item--width2" data-delay="0.3s"><img src="../img/tech_tablet.jpg" class="img"></li>
-					<li class="work grid-item spa_ani" data-delay="0.7s"><img src="../img/tech_tableturner.jpg" class="img"></li>
-					<li class="work grid-item spa_ani" data-delay="0.8s"><img src="../img/tech_typewriter.jpg" class="img"></li>
+					<li class="work grid-item"><img src="../img/tech_camera.jpg" class="img"></li>
+					<li class="work grid-item"><img src="../img/tech_drone.jpg" class="img"></li>
+					<li class="work grid-item"><img src="../img/tech_mic.jpg" class="img"></li>
+					<li class="work grid-item"><img src="../img/tech_phone.jpg" class="img"></li>
+					<li class="work grid-item"><img src="../img/tech_sound.jpg" class="img"></li>
+					<li class="work grid-item grid-item--width2" data-delay="0.3s"><img src="../img/tech_tablet.jpg" class="img"></li>
+					<li class="work grid-item"><img src="../img/tech_tableturner.jpg" class="img"></li>
+					<li class="work grid-item"><img src="../img/tech_typewriter.jpg" class="img"></li>
 				</ul>
 			</div>
 		</section>
@@ -424,12 +424,13 @@
 					</ul>
 				</li>
 				<li class="contact_form">
-					<form>
-						<input type="text" name="uname" id="uname" placeholder="Name">
-						<input type="text" name="email" id="email" placeholder="Email">
-						<input type="text" name="subject" id="subject" placeholder="Subject">
-						<input type="text" name="message" id="message" placeholder="Message">
-						<button type="button" class="w3-button w3-black">
+					<form id="contact-form">
+						<input type="hidden" name="contact_number">
+						<input type="text" name="user_name" id="uname" placeholder="Name">
+						<input type="text" name="user_email" id="email" placeholder="Email">
+						<input type="text" name="user_subject" id="subject" placeholder="Subject">
+						<input type="text" name="user_message" id="message" placeholder="Message">
+						<button type="submit" class="w3-button w3-black">
 							<span class="fa fa-paper-plane"></span> SEND MESSAGE
 						</button>
 					</form>
@@ -458,6 +459,7 @@
 		</p>
 	</footer>
 	<script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=5abaa56b69e398c9c88c330eafc4f757&libraries=clusterer";></script>
+	<script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
 	<!--script src="../js/slide.fade.js"></script-->
 	<!--script src="../js/slide.vert.js"></script-->
 	<script src="../js/slide.hori.js"></script>
