@@ -106,4 +106,10 @@ $(".banner_wrap").eq(0).find(".slide")
 $(".slide", $(".banner_wrap").eq(0))
 */
 
-//new FadeSlide($(".slide"), {delay:3000, speed:1000});
+//new SlideFade($(".slide"), {delay:3000, speed:1000});
+var options = {
+	delay: 3000,
+	speed: 300,
+	dir: -1
+};
+var horiBanner = new SlideHori($(".banner_wrap"), $(".slide"), options);
