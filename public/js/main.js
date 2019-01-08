@@ -110,6 +110,14 @@ $(".slide", $(".banner_wrap").eq(0))
 var options = {
 	delay: 3000,
 	speed: 300,
-	dir: -1
+	dir: -1,
+	dirBtnUse: true,
+	dirBtn:[$("#bt_prev"), $("#bt_next")]
 };
-var horiBanner = new SlideHori($(".banner_wrap"), $(".slide"), options);
+var horiBanner = new SlideHori($("#banner1"), $("#banner1").find(".slide"), options);
+
+/*
+$(".banner_wrap").find(".slide")
+$(".banner_wrap").children(".slide")
+$(".slide", $(".banner_wrap"))
+*/

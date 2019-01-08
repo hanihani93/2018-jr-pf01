@@ -81,6 +81,7 @@ $("#bt_next").click(function(){
 
 var SlideHori = (function(){
 	function SlideHori(container, slides, options) {
+		console.log(container.attr("id"), slides.eq(0).parent().attr("id"));
 		var obj = this;
 		this.container = container;
 		this.slides = slides;
@@ -89,18 +90,30 @@ var SlideHori = (function(){
 			if(!this.options.delay) this.options.delay = 2000;
 			if(!this.options.speed) this.options.speed = 500;
 			if(!this.options.dir) this.options.dir = -1;
+			if(!this.options.dirBtn || this.options.dirBtn.length<2) {
+				this.options.dirBtnUse = false;
+			}
 		}
 		else {
 			this.options = {
 				delay: 2000,
 				speed: 500,
-				dir: -1
+				dir: -1,
+				dirBtnUse = false
 			}
 		}
 		this.now = 0;
 		this.end = this.slides.length - 1;
 		this.init(obj);
-		//this.setInterval = setInterval(this.ani, this.delay);
+		this.setInterval = setInterval(this.ani, this.options.delay, obj);
+		if(this.options.dirBtnUse) {
+			this.options.dirBtn[0].click(function(){
+
+			});
+			this.options.dirBtn[1].click(function(){
+				
+			});
+		}
 	}
 	SlideHori.prototype.init = function(obj) {
 		obj.container.css({"left":0});
@@ -118,6 +131,19 @@ var SlideHori = (function(){
 			obj.slides.eq(obj.now-1).css({"left":"-100%"}).show(0);
 			obj.slides.eq(obj.now+1).css({"left":"100%"}).show(0);
 		}
+	}
+	SlideHori.prototype.ani = function(obj) {
+		obj.init(obj);
+		obj.container.stop().animate({"left":(100*obj.options.dir)+"%"}, obj.options.speed, function(){
+			if(obj.options.dir == -1) {
+				if(obj.now == obj.end) obj.now = 0;
+				else obj.now++;
+			}
+			else {
+				if(obj.now == 0) obj.now = obj.end;
+				else obj.now--;
+			}
+		});
 	}
 	return SlideHori;
 }());
