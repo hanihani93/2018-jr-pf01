@@ -6,7 +6,7 @@ var scFn = function(){
 	$(".page").each(function(i){
 		pages[i] = $(this).offset().top;
 	});
-	scTop = $("html, body").scrollTop();
+	scTop = $(document).scrollTop();
 	now = pages.length - 1;
 	for(var i in pages) {
 		if(scTop + gap < pages[i]) {
