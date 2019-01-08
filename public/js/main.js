@@ -139,6 +139,11 @@ emailjs.init("user_TROFqVnbPGZyygPAci7nt");//본인거로...
 $('#contact-form').on('submit', function(e) {
 		e.preventDefault();
 		$("input[name='contact_number']").val(Math.random() * 100000 | 0);
-		emailjs.sendForm('booldook', 'template_Do4o09A1', this);//앞에두개 본인거로...
-		alert("메세지가 전달되었습니다.");
+		//앞에두개 본인거로...
+		emailjs.sendForm('booldook', 'template_Do4o09A1', this).then(function(res){
+			alert("메세지 전송에 성공했습니다. \n빠른 시간안에 답변 드리겠습니다.");
+		}, function(err){
+			alert("메세지 전송이 실패했습니다. \n다시 시도해 주세요.");
+		});
+		$(this)[0].reset();
 });
