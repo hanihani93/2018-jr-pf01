@@ -135,9 +135,10 @@ document.getElementById('contact-form').addEventListener('submit', function(even
 		emailjs.sendForm('contact_service', 'contact_template', this);
 });
 */
-emailjs.init("booldook");
+emailjs.init("user_TROFqVnbPGZyygPAci7nt");//본인거로...
 $('#contact-form').on('submit', function(e) {
 		e.preventDefault();
-		$("input:name['contact_number']").val(Math.random() * 100000 | 0);
-		emailjs.sendForm('contact_service', 'contact_template', this);
+		$("input[name='contact_number']").val(Math.random() * 100000 | 0);
+		emailjs.sendForm('booldook', 'template_Do4o09A1', this);//앞에두개 본인거로...
+		alert("메세지가 전달되었습니다.");
 });
