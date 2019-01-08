@@ -81,7 +81,6 @@ $("#bt_next").click(function(){
 
 var SlideHori = (function(){
 	function SlideHori(container, slides, options) {
-		console.log(container.attr("id"), slides.eq(0).parent().attr("id"));
 		var obj = this;
 		this.container = container;
 		this.slides = slides;
@@ -99,21 +98,34 @@ var SlideHori = (function(){
 				delay: 2000,
 				speed: 500,
 				dir: -1,
-				dirBtnUse = false
+				dirBtnUse: false
 			}
 		}
 		this.now = 0;
 		this.end = this.slides.length - 1;
 		this.init(obj);
 		this.setInterval = setInterval(this.ani, this.options.delay, obj);
-		if(this.options.dirBtnUse) {
+		if(this.options.dirBtnUse === true) {
 			this.options.dirBtn[0].click(function(){
-
+				clearInterval(obj.interval);
+				obj.options.dir = 1;
+				obj.ani(obj);
+				obj.interval = setInterval(obj.ani, obj.options.delay, obj);
 			});
 			this.options.dirBtn[1].click(function(){
-				
+				clearInterval(obj.interval);
+				obj.options.dir = -1;
+				obj.ani(obj);
+				obj.interval = setInterval(obj.ani, obj.options.delay, obj);
 			});
 		}
+		this.container.mouseenter(function(){
+			clearInterval(obj.interval);
+		});
+		this.container.mouseleave(function(){
+			clearInterval(obj.interval);
+			obj.interval = setInterval(obj.ani, obj.options.delay, obj);
+		});
 	}
 	SlideHori.prototype.init = function(obj) {
 		obj.container.css({"left":0});
