@@ -1,13 +1,9 @@
-var gap = 300;		// page가 나타나기 전 px
+var gap = 200;		// page가 나타나기 전 px
 var now = 0;			// 현재 페이지
 var scTop = 0;		// 현재 문서의 scrollTop
 var pages = new Array();	// 각각의 페이지의 상단으로 부터 떨어진 거리
-$("body").imagesLoaded(function(){
-	$(".page").each(function(i){
-		pages[i] = $(this).offset().top;
-	});
-});
-$(window).scroll(function(e){
+
+$(window).scroll(function(){
 	$(".page").each(function(i){
 		pages[i] = $(this).offset().top;
 	});
@@ -19,5 +15,23 @@ $(window).scroll(function(e){
 			break;
 		}
 	}
-	console.log(now);
+	$(".page").eq(now).find(".spa_ani").each(function(){
+		var name = "opaShow";
+		var duration = "0.5s";
+		var delay = 0;
+		if($(this).data("name") != "" && $(this).data("name") != undefined) {
+			name = $(this).data("name");	//html에서 data-name 값
+		}
+		if($(this).data("duration") != "" && $(this).data("duration") != undefined) {
+			duration = $(this).data("duration");	//html에서 data-duration 값
+		}
+		if($(this).data("delay") != "" && $(this).data("delay") != undefined) {
+			delay = $(this).data("delay");	//html에서 data-delay 값
+		}
+		$(this).css({
+			"animation-name": name, 
+			"animation-duration": duration,
+			"animation-delay": delay
+		});
+	});
 });
