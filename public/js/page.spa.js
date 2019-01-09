@@ -6,7 +6,7 @@ var scFn = function(){
 	$(".page").each(function(i){
 		pages[i] = $(this).offset().top;
 	});
-	scTop = $(document).scrollTop();
+	scTop = $(window, "html, body").scrollTop();
 	now = pages.length - 1;
 	for(var i in pages) {
 		if(scTop + gap < pages[i]) {
@@ -37,9 +37,8 @@ var scFn = function(){
 		eval($(this).data("fn")+"($(this))");
 	});
 };
-$(window).on("scroll", scFn);
-$("body").on("touchmove", scFn);
+$(window, document, "html, body").on("scroll touchmove", scFn);
 
 function barMove(obj) {
-	if(obj.width() == 0) obj.stop().animate({"width":obj.html()}, 2000,);
+	if(obj.width() == 0) obj.stop().animate({"width":obj.html()}, 2000);
 }
